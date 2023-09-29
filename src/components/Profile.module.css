@@ -1,0 +1,17 @@
+.content {
+    grid-area: content;
+    background-color: bisque;
+}
+
+.longImage img {
+    width: 1200px;
+    height: 200px;
+}
+
+.ava img {
+    width: 200px;
+}
+
+.item {
+    color: red;
+}

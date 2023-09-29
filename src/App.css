@@ -12,26 +12,3 @@
   /*grid-gap: 10px;*/
 }
 
-.header {
-  grid-area: header;
-  background-color: aqua;
-}
-
-.nav {
-  grid-area: nav;
-  background-color: aquamarine;
-}
-
-.content {
-  grid-area: content;
-  background-color: bisque;
-}
-
-.long-image img {
-  width: 1200px;
-  height: 200px;
-}
-
-.ava img {
-  width: 200px;
-}
