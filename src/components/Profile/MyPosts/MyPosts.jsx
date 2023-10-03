@@ -11,7 +11,7 @@ const MyPosts = () => {
             </div>
             <div className={s.post}>
                 <Post text="First Post" likeCounts="10"/>
-                <Post text="Second Post with different text" likeCounts="2git0"/>
+                <Post text="Second Post with different text" likeCounts="20"/>
             </div>
         </div>
     )
