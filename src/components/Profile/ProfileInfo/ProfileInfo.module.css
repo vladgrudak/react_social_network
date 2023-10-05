@@ -1,0 +1,14 @@
+
+.longImage img {
+    width: 1200px;
+    height: 200px;
+}
+
+.avaDesc {
+    padding: 10px;
+}
+
+.avaDesc img {
+    width: 100px;
+    border-radius: 50%;
+}
