@@ -1,9 +1,13 @@
+import {render} from "react-dom";
+import {renderEntireTree} from "../render";
+
 let state = {
     profilePage : {
         postsData : [
             {id: 1, text: "First Post", likesCount: 10},
             {id: 2, text: "Second Post with different text", likesCount: 20},
-        ]
+        ],
+        newPostText: ""
     },
     dialogsPage : {
         dialogsData : [
@@ -31,14 +35,21 @@ let state = {
 
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        text: postMessage,
+        text: state.profilePage.newPostText,
         likesCount: 0,
     };
 
     state.profilePage.postsData.push(newPost);
+    renderEntireTree(state);
+    state.profilePage.newPostText = "";
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderEntireTree(state);
 }
 
 export default state;
