@@ -1,5 +1,5 @@
-import {render} from "react-dom";
-import {renderEntireTree} from "../render";
+let renderEntireTree = () => {
+}
 
 let state = {
     profilePage : {
@@ -23,7 +23,8 @@ let state = {
             {id: 3, message: "Spasibo!"},
             {id: 4, message: "Ne nado!"},
             {id: 5, message: "OK"}
-        ]
+        ],
+        newMessageText : ""
     },
     sidebar: {
         friendsData: [
@@ -35,7 +36,7 @@ let state = {
 
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         text: state.profilePage.newPostText,
@@ -47,9 +48,29 @@ export let addPost = () => {
     state.profilePage.newPostText = "";
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     renderEntireTree(state);
+}
+
+export const addMessage = () => {
+    let newMessage = {
+        id: 6,
+        message: state.dialogsPage.newMessageText,
+    };
+
+    state.dialogsPage.messagesData.push(newMessage);
+    renderEntireTree(state);
+    state.dialogsPage.newMessageText = "";
+}
+
+export const updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    renderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+ renderEntireTree = observer;
 }
 
 export default state;
